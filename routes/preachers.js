@@ -1,7 +1,11 @@
 import express from 'express';
 const route = express.Router();
+import preacherController from '../controllers/preachers.js';
 
-route.post() // Crear
-route.get() // Consultar
-route.put() // Editar
-route.delete() // Eliminar
+route.post('/create', preacherController.create) // Crear
+route.get('/', preacherController.getAll) // Todas
+route.get('/:id', preacherController.getOne) // Consultar
+route.put('/:id', preacherController.update) // Editar
+route.delete('/:id', preacherController.delete) // Eliminar
+
+export default route;
